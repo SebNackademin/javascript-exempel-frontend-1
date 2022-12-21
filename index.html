@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link rel="stylesheet" href="styling.css">
+</head>
+
+<body>
+
+    <div id="root">
+ 
+        <header class="flex-center-row red">
+            <h1>Demo Time</h1>
+        </header>
+        <div id="nav-main-container">
+            <nav class="green">
+                <a href="#page1">Link 1</a>
+                <a href="#page2">Link 2</a>
+                <a href="#page3">Link 3</a>
+            </nav>
+            <main class="yellow">
+
+                <div id="page1" class="page">
+
+                    <h2>Klasslista</h2>
+
+                    <div class="add-form" style="border: 1px solid black">
+                        <!-- Namn -->
+                        <label for="inputName">Namn: </label>
+                        <input id="inputName" type="text" value="">
+
+                        <!-- Telefon -->
+                        <label for="inputPhone">Telefon: </label>
+                        <input id="inputPhone" type="text" value="">
+
+                        <!-- Årskull -->
+                        <label for="inputYear">Årskull: </label>
+                        <select id="inputYear" name="Årskull">
+                            <option value="År 1" selected="selected">År 1</option>
+                            <option value="År 2">År 2</option>
+                        </select>
+
+                        <div><br></div>
+
+                        <!-- Lägg Till Knapp -->
+                        <button onclick="createStudent(inputName.value, inputPhone.value, inputYear.value)">Lägg till</button>
+                    </div>
+
+                    <br>
+                    <span>Filtrera</span>
+                    <input id="filterInput" onkeyup="filterStudents(filterInput.value)">
+                    <label for="filterTypeAlla">Alla</span>
+                    <input name="filterType" id="filterTypeAlla" class="filter-type" type="radio" value="Alla" checked="checked" onchange="filterStudents(filterInput.value)">
+                    <label for="filterType1">År 1</span>
+                    <input name="filterType" id="filterType1" class="filter-type" type="radio" value="År 1" onchange="filterStudents(filterInput.value)">
+                    <label for="filterType2">År 2</span>
+                    <input name="filterType" id="filterType2" class="filter-type" type="radio" value="År 2" onchange="filterStudents(filterInput.value)">
+                    <br><br>
+                    
+                    <!-- LIST HEADER -->
+                    <div class="class-list-header">
+                        <span>Namn</span>
+                        <span>Telefon</span>
+                        <span>År</span>
+                        <div></div>
+                    </div>
+                    <div class="class-list">
+                        <!-- LIST ITEMS -->
+                        <!-- Generates from form 
+                            <div class="class-list-item">
+                                <span id="class-list-item-name">name</span>
+                                <span id="class-list-item-phone">phone</span>
+                                <span id="class-list-item-type">type</span>
+                                <button onclick="removeStudent(this.parentElement)">Ta Bort</button>
+                            </div>
+                        -->
+                    </div>
+
+                </div>
+            </main>
+        </div>
+        <footer class="flex-center-row blue">Copyright &copy; Hugh Jackman</footer>
+
+    </div>
+
+    <script type="application/javascript" src="/mina_scripts/metod2.js">
+    </script>
+</body>
+</html>
